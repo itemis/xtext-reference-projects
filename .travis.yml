@@ -150,9 +150,15 @@ matrix:
   - jdk: oraclejdk8
     env: BUILDCMD=greetings-maven-2.16.sh
   - jdk: oraclejdk8
+    env: BUILDCMD=greetings-tycho-2.12-src.sh DISPLAY=:99.0
+  - jdk: oraclejdk8
     env: BUILDCMD=greetings-tycho-2.14.sh DISPLAY=:99.0
   - jdk: oraclejdk8
+    env: BUILDCMD=greetings-tycho-2.14-src.sh DISPLAY=:99.0
+  - jdk: oraclejdk8
     env: BUILDCMD=greetings-tycho-2.15.sh DISPLAY=:99.0
+  - jdk: oraclejdk8
+    env: BUILDCMD=greetings-tycho-2.15-src.sh DISPLAY=:99.0
   - jdk: oraclejdk8
     env: BUILDCMD=greetings-tycho-2.16.sh DISPLAY=:99.0
   - jdk: oraclejdk8
@@ -162,7 +168,15 @@ matrix:
   - jdk: oraclejdk8
     env: BUILDCMD=greetings-tycho-2.14.sh DISPLAY=:99.0 TP=oxygen
   - jdk: oraclejdk8
+    env: BUILDCMD=greetings-tycho-2.14-src.sh DISPLAY=:99.0 TP=luna-linux
+  - jdk: oraclejdk8
+    env: BUILDCMD=greetings-tycho-2.14-src.sh DISPLAY=:99.0 TP=mars-linux
+  - jdk: oraclejdk8
+    env: BUILDCMD=greetings-tycho-2.14-src.sh DISPLAY=:99.0 TP=oxygen
+  - jdk: oraclejdk8
     env: BUILDCMD=greetings-tycho-2.15.sh DISPLAY=:99.0 TP=oxygen
+  - jdk: oraclejdk8
+    env: BUILDCMD=greetings-tycho-2.15-src.sh DISPLAY=:99.0 TP=oxygen
   - jdk: oraclejdk8
     env: BUILDCMD=greetings-tycho-2.16.sh DISPLAY=:99.0 TP=oxygen
   - jdk: oraclejdk8
@@ -170,9 +184,15 @@ matrix:
   - jdk: oraclejdk8
     env: BUILDCMD=greetings-tycho-2.15.sh DISPLAY=:99.0 TP=photon
   - jdk: oraclejdk8
+    env: BUILDCMD=greetings-tycho-2.15-src.sh DISPLAY=:99.0 TP=photon
+  - jdk: oraclejdk8
     env: BUILDCMD=greetings-tycho-2.16.sh DISPLAY=:99.0 TP=photon
   - jdk: oraclejdk8
+    env: BUILDCMD=greetings-tycho-2.16-src.sh DISPLAY=:99.0 TP=photon
+  - jdk: oraclejdk8
     env: BUILDCMD=greetings-tycho-2.16.sh DISPLAY=:99.0 TP=latest
+  - jdk: oraclejdk8
+    env: BUILDCMD=greetings-tycho-2.16-src.sh DISPLAY=:99.0 TP=latest
   - jdk: oraclejdk8
     env: BUILDCMD=domainmodel-2.15.sh DISPLAY=:99.0
   - jdk: oraclejdk8
