@@ -17,7 +17,7 @@ pipeline {
       agent {
         docker {
           image 'openjdk:8'
-          label 'xtext-ref-projects-jdk-8'
+          label 'external'
         }
       }
       steps {
@@ -31,7 +31,7 @@ pipeline {
       agent {
         docker {
           image 'openjdk:8'
-          label 'xtext-ref-projects-jdk-8'
+          label 'external'
         }
       }
       steps {
@@ -53,7 +53,7 @@ pipeline {
       agent {
         docker {
           image 'openjdk:8'
-          label 'xtext-ref-projects-jdk-8'
+          label 'external'
         }
       }
       steps {
@@ -75,7 +75,7 @@ pipeline {
       agent {
         docker {
           image 'openjdk:8'
-          label 'xtext-ref-projects-jdk-8'
+          label 'external'
         }
       }
       steps {
@@ -104,7 +104,7 @@ pipeline {
       agent {
         docker {
           image 'openjdk:8'
-          label 'xtext-ref-projects-jdk-8'
+          label 'external'
         }
       }
       steps {
@@ -123,7 +123,7 @@ pipeline {
       agent {
         docker {
           image 'openjdk:11'
-          label 'xtext-ref-projects-jdk-11'
+          label 'external'
         }
       }
       steps {
@@ -144,7 +144,7 @@ pipeline {
       agent {
         docker {
           image 'openjdk:11'
-          label 'xtext-ref-projects-jdk-11'
+          label 'external'
         }
       }
       steps {
@@ -165,7 +165,7 @@ pipeline {
       agent {
         docker {
           image 'openjdk:11'
-          label 'xtext-ref-projects-jdk-11'
+          label 'external'
         }
       }
       steps {
