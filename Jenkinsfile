@@ -8,10 +8,6 @@ pipeline {
     timestamps()
   }
 
-  environment {
-    SCRIPTS="$WORKSPACE/scripts"
-  }
-
   stages {
     stage('JDK 8: Integrationtests') {
       agent {
@@ -22,7 +18,7 @@ pipeline {
       }
       steps {
         sh """
-          $SCRIPTS/integrations.sh
+          $WORKSPACE/scripts/integrations.sh
         """
       }
     }
@@ -36,15 +32,15 @@ pipeline {
       }
       steps {
         sh """
-          $SCRIPTS/greetings-gradle-2.12.sh
-          $SCRIPTS/greetings-gradle-2.14.sh
-          $SCRIPTS/greetings-gradle-2.15.sh
-          $SCRIPTS/greetings-gradle-2.16.sh
-          $SCRIPTS/greetings-gradle-2.17.M1.sh
-          $SCRIPTS/greetings-gradle-2.17.sh
-          $SCRIPTS/greetings-gradle-2.18.sh
-          $SCRIPTS/greetings-gradle-2.19.sh
-          $SCRIPTS/greetings-gradle-2.20.sh
+          $WORKSPACE/scripts/greetings-gradle-2.12.sh
+          $WORKSPACE/scripts/greetings-gradle-2.14.sh
+          $WORKSPACE/scripts/greetings-gradle-2.15.sh
+          $WORKSPACE/scripts/greetings-gradle-2.16.sh
+          $WORKSPACE/scripts/greetings-gradle-2.17.M1.sh
+          $WORKSPACE/scripts/greetings-gradle-2.17.sh
+          $WORKSPACE/scripts/greetings-gradle-2.18.sh
+          $WORKSPACE/scripts/greetings-gradle-2.19.sh
+          $WORKSPACE/scripts/greetings-gradle-2.20.sh
         """
       }
     }
@@ -58,15 +54,15 @@ pipeline {
       }
       steps {
         sh """
-          $SCRIPTS/greetings-maven-2.12.sh
-          $SCRIPTS/greetings-maven-2.13.sh
-          $SCRIPTS/greetings-maven-2.14.sh
-          $SCRIPTS/greetings-maven-2.15.sh
-          $SCRIPTS/greetings-maven-2.16.sh
-          $SCRIPTS/greetings-maven-2.17.sh
-          $SCRIPTS/greetings-maven-2.18.sh
-          $SCRIPTS/greetings-maven-2.19.sh
-          $SCRIPTS/greetings-maven-2.20.sh
+          $WORKSPACE/scripts/greetings-maven-2.12.sh
+          $WORKSPACE/scripts/greetings-maven-2.13.sh
+          $WORKSPACE/scripts/greetings-maven-2.14.sh
+          $WORKSPACE/scripts/greetings-maven-2.15.sh
+          $WORKSPACE/scripts/greetings-maven-2.16.sh
+          $WORKSPACE/scripts/greetings-maven-2.17.sh
+          $WORKSPACE/scripts/greetings-maven-2.18.sh
+          $WORKSPACE/scripts/greetings-maven-2.19.sh
+          $WORKSPACE/scripts/greetings-maven-2.20.sh
         """
       }
     }
@@ -80,22 +76,22 @@ pipeline {
       }
       steps {
         sh """
-          $SCRIPTS/greetings-tycho-2.14.sh
-          $SCRIPTS/greetings-tycho-2.15.sh
-          $SCRIPTS/greetings-tycho-2.16.sh
-          TP=luna-linux $SCRIPTS/greetings-tycho-2.14.sh
-          TP=mars-linux $SCRIPTS/greetings-tycho-2.14.sh
-          TP=oxygen $SCRIPTS/greetings-tycho-2.14.sh
-          TP=oxygen $SCRIPTS/greetings-tycho-2.15.sh
-          TP=oxygen $SCRIPTS/greetings-tycho-2.16.sh
-          TP=photon $SCRIPTS/greetings-tycho-2.14.sh
-          TP=photon $SCRIPTS/greetings-tycho-2.15.sh
-          TP=photon $SCRIPTS/greetings-tycho-2.16.sh
-          TP=latest $SCRIPTS/greetings-tycho-2.16.sh
-          TP=latest $SCRIPTS/greetings-tycho-2.17.sh
-          $SCRIPTS/greetings-tycho-2.18.sh
-          $SCRIPTS/greetings-tycho-2.19.sh
-          $SCRIPTS/greetings-tycho-2.20.sh
+          $WORKSPACE/scripts/greetings-tycho-2.14.sh
+          $WORKSPACE/scripts/greetings-tycho-2.15.sh
+          $WORKSPACE/scripts/greetings-tycho-2.16.sh
+          TP=luna-linux $WORKSPACE/scripts/greetings-tycho-2.14.sh
+          TP=mars-linux $WORKSPACE/scripts/greetings-tycho-2.14.sh
+          TP=oxygen $WORKSPACE/scripts/greetings-tycho-2.14.sh
+          TP=oxygen $WORKSPACE/scripts/greetings-tycho-2.15.sh
+          TP=oxygen $WORKSPACE/scripts/greetings-tycho-2.16.sh
+          TP=photon $WORKSPACE/scripts/greetings-tycho-2.14.sh
+          TP=photon $WORKSPACE/scripts/greetings-tycho-2.15.sh
+          TP=photon $WORKSPACE/scripts/greetings-tycho-2.16.sh
+          TP=latest $WORKSPACE/scripts/greetings-tycho-2.16.sh
+          TP=latest $WORKSPACE/scripts/greetings-tycho-2.17.sh
+          $WORKSPACE/scripts/greetings-tycho-2.18.sh
+          $WORKSPACE/scripts/greetings-tycho-2.19.sh
+          $WORKSPACE/scripts/greetings-tycho-2.20.sh
         """
       }
     }
@@ -109,12 +105,12 @@ pipeline {
       }
       steps {
         sh """
-          $SCRIPTS/domainmodel-2.15.sh
-          $SCRIPTS/domainmodel-2.16.sh
-          $SCRIPTS/domainmodel-2.17.sh
-          $SCRIPTS/domainmodel-2.18.sh
-          $SCRIPTS/domainmodel-2.19.sh
-          $SCRIPTS/domainmodel-2.20.sh
+          $WORKSPACE/scripts/domainmodel-2.15.sh
+          $WORKSPACE/scripts/domainmodel-2.16.sh
+          $WORKSPACE/scripts/domainmodel-2.17.sh
+          $WORKSPACE/scripts/domainmodel-2.18.sh
+          $WORKSPACE/scripts/domainmodel-2.19.sh
+          $WORKSPACE/scripts/domainmodel-2.20.sh
         """
       }
     }
@@ -128,14 +124,14 @@ pipeline {
       }
       steps {
         sh """
-          $SCRIPTS/greetings-gradle-2.16.sh
-          $SCRIPTS/greetings-gradle-2.17-J11.sh
-          $SCRIPTS/greetings-gradle-2.18.sh
-          $SCRIPTS/greetings-gradle-2.18-J11.sh
-          $SCRIPTS/greetings-gradle-2.19.sh
-          $SCRIPTS/greetings-gradle-2.19-J11.sh
-          $SCRIPTS/greetings-gradle-2.20.sh
-          $SCRIPTS/greetings-gradle-2.20-J11.sh
+          $WORKSPACE/scripts/greetings-gradle-2.16.sh
+          $WORKSPACE/scripts/greetings-gradle-2.17-J11.sh
+          $WORKSPACE/scripts/greetings-gradle-2.18.sh
+          $WORKSPACE/scripts/greetings-gradle-2.18-J11.sh
+          $WORKSPACE/scripts/greetings-gradle-2.19.sh
+          $WORKSPACE/scripts/greetings-gradle-2.19-J11.sh
+          $WORKSPACE/scripts/greetings-gradle-2.20.sh
+          $WORKSPACE/scripts/greetings-gradle-2.20-J11.sh
         """
       }
     }
@@ -149,14 +145,14 @@ pipeline {
       }
       steps {
         sh """
-          $SCRIPTS/greetings-maven-2.16.sh
-          $SCRIPTS/greetings-maven-2.17-J11.sh
-          $SCRIPTS/greetings-maven-2.18.sh
-          $SCRIPTS/greetings-maven-2.18-J11.sh
-          $SCRIPTS/greetings-maven-2.19.sh
-          $SCRIPTS/greetings-maven-2.19-J11.sh
-          $SCRIPTS/greetings-maven-2.20.sh
-          $SCRIPTS/greetings-maven-2.20-J11.sh
+          $WORKSPACE/scripts/greetings-maven-2.16.sh
+          $WORKSPACE/scripts/greetings-maven-2.17-J11.sh
+          $WORKSPACE/scripts/greetings-maven-2.18.sh
+          $WORKSPACE/scripts/greetings-maven-2.18-J11.sh
+          $WORKSPACE/scripts/greetings-maven-2.19.sh
+          $WORKSPACE/scripts/greetings-maven-2.19-J11.sh
+          $WORKSPACE/scripts/greetings-maven-2.20.sh
+          $WORKSPACE/scripts/greetings-maven-2.20-J11.sh
         """
       }
     }
@@ -170,14 +166,14 @@ pipeline {
       }
       steps {
         sh """
-          $SCRIPTS/greetings-tycho-2.16.sh
-          $SCRIPTS/greetings-tycho-2.17-J11.sh
-          $SCRIPTS/greetings-tycho-2.18.sh
-          $SCRIPTS/greetings-tycho-2.18-J11.sh
-          $SCRIPTS/greetings-tycho-2.19.sh
-          $SCRIPTS/greetings-tycho-2.19-J11.sh
-          $SCRIPTS/greetings-tycho-2.20.sh
-          $SCRIPTS/greetings-tycho-2.20-J11.sh
+          $WORKSPACE/scripts/greetings-tycho-2.16.sh
+          $WORKSPACE/scripts/greetings-tycho-2.17-J11.sh
+          $WORKSPACE/scripts/greetings-tycho-2.18.sh
+          $WORKSPACE/scripts/greetings-tycho-2.18-J11.sh
+          $WORKSPACE/scripts/greetings-tycho-2.19.sh
+          $WORKSPACE/scripts/greetings-tycho-2.19-J11.sh
+          $WORKSPACE/scripts/greetings-tycho-2.20.sh
+          $WORKSPACE/scripts/greetings-tycho-2.20-J11.sh
         """
       }
     }
