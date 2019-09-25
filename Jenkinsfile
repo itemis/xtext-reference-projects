@@ -16,6 +16,9 @@ pipeline {
           label 'external'
         }
       }
+      environment {
+        MAVEN_OPTS="-Dmaven.repo.local=$WORKSPACE/.m2/repository"
+      }
       steps {
         sh """
           $WORKSPACE/scripts/integrationtests.sh
@@ -52,6 +55,9 @@ pipeline {
           label 'external'
         }
       }
+      environment {
+        MAVEN_OPTS="-Dmaven.repo.local=$WORKSPACE/.m2/repository"
+      }
       steps {
         sh """
           $WORKSPACE/scripts/greetings-maven-2.12.sh
@@ -73,6 +79,9 @@ pipeline {
           image 'maven:3.6.2-jdk-8'
           label 'external'
         }
+      }
+      environment {
+        MAVEN_OPTS="-Dmaven.repo.local=$WORKSPACE/.m2/repository"
       }
       steps {
         sh """
@@ -102,6 +111,9 @@ pipeline {
           image 'maven:3.6.2-jdk-8'
           label 'external'
         }
+      }
+      environment {
+        MAVEN_OPTS="-Dmaven.repo.local=$WORKSPACE/.m2/repository"
       }
       steps {
         sh """
@@ -143,6 +155,9 @@ pipeline {
           label 'external'
         }
       }
+      environment {
+        MAVEN_OPTS="-Dmaven.repo.local=$WORKSPACE/.m2/repository"
+      }
       steps {
         sh """
           $WORKSPACE/scripts/greetings-maven-2.16.sh
@@ -163,6 +178,9 @@ pipeline {
           image 'maven:3.6.2-jdk-11'
           label 'external'
         }
+      }
+      environment {
+        MAVEN_OPTS="-Dmaven.repo.local=$WORKSPACE/.m2/repository"
       }
       steps {
         sh """
