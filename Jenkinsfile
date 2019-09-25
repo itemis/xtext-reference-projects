@@ -18,7 +18,7 @@ pipeline {
       }
       steps {
         sh """
-          $WORKSPACE/scripts/integrations.sh
+          $WORKSPACE/scripts/integrationtests.sh
         """
       }
     }
