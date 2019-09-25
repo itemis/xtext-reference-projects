@@ -179,56 +179,39 @@ pipeline {
     }
   }
 
-//   post {
-//     always {
-//       junit testResults: '**/build/test-results/test/*.xml'
-//     }
-//     success {
-//       archiveArtifacts artifacts: 'build/**'
-//       script {
-//         if (params.TRIGGER_DOWNSTREAM_BUILD==true) {
-//           DOWNSTREAM_JOBS.split(',').each {
-//             def downstreamUrl = new URL("${env.JENKINS_URL}/job/$it/job/${env.BRANCH_NAME}")
-//             def boolean downstreamJobExists = sh(script: "curl -L -s -o /dev/null -I -w '%{http_code}' ${downstreamUrl}", returnStdout: true) == "200"
-//             if (downstreamJobExists) {
-//               build job: "$it/${env.BRANCH_NAME}", wait: false, parameters: [booleanParam(name: 'TRIGGER_DOWNSTREAM_BUILD', value: "${params.TRIGGER_DOWNSTREAM_BUILD}")]
-//             }
-//           }
-//         }
-//       }
-//     }
-//     cleanup {
-//       script {
-//         def curResult = currentBuild.currentResult
-//         def lastResult = 'NEW'
-//         if (currentBuild.previousBuild != null) {
-//           lastResult = currentBuild.previousBuild.result
-//         }
+  post {
+    cleanup {
+      script {
+        def curResult = currentBuild.currentResult
+        def lastResult = 'NEW'
+        if (currentBuild.previousBuild != null) {
+          lastResult = currentBuild.previousBuild.result
+        }
 
-//         if (curResult != 'SUCCESS' || lastResult != 'SUCCESS') {
-//           def color = ''
-//           switch (curResult) {
-//             case 'SUCCESS':
-//               color = '#00FF00'
-//               break
-//             case 'UNSTABLE':
-//               color = '#FFFF00'
-//               break
-//             case 'FAILURE':
-//               color = '#FF0000'
-//               break
-//             default: // e.g. ABORTED
-//               color = '#666666'
-//           }
+        if (curResult != 'SUCCESS' || lastResult != 'SUCCESS') {
+          def color = ''
+          switch (curResult) {
+            case 'SUCCESS':
+              color = '#00FF00'
+              break
+            case 'UNSTABLE':
+              color = '#FFFF00'
+              break
+            case 'FAILURE':
+              color = '#FF0000'
+              break
+            default: // e.g. ABORTED
+              color = '#666666'
+          }
 
-//           slackSend (
-//             message: "${lastResult} => ${curResult}: <${env.BUILD_URL}|${env.JOB_NAME}#${env.BUILD_NUMBER}>",
-//             botUser: true,
-//             channel: 'xtext-builds',
-//             color: "${color}"
-//           )
-//         }
-//       }
-//     }
-//   }
+          slackSend (
+            message: "${lastResult} => ${curResult}: <${env.BUILD_URL}|${env.JOB_NAME}#${env.BUILD_NUMBER}>",
+            botUser: true,
+            channel: 'xtext-builds',
+            color: "${color}"
+          )
+        }
+      }
+    }
+  }
 }
