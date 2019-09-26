@@ -11,8 +11,8 @@ pipeline {
   stages {
     stage('JDK 8: Integrationtests') {
       agent {
-        docker {
-          image 'maven:3.6.2-jdk-8'
+        dockerfile {
+          dir 'releng/jdk8'
           label 'external'
         }
       }
@@ -28,8 +28,8 @@ pipeline {
 
     stage('JDK 8: greetings-gradle') {
       agent {
-        docker {
-          image 'maven:3.6.2-jdk-8'
+        dockerfile {
+          dir 'releng/jdk8'
           label 'external'
         }
       }
@@ -50,8 +50,8 @@ pipeline {
 
     stage('JDK 8: greetings-maven') {
       agent {
-        docker {
-          image 'maven:3.6.2-jdk-8'
+        dockerfile {
+          dir 'releng/jdk8'
           label 'external'
         }
       }
@@ -75,8 +75,8 @@ pipeline {
 
     stage('JDK 8: greetings-tycho') {
       agent {
-        docker {
-          image 'maven:3.6.2-jdk-8'
+        dockerfile {
+          dir 'releng/jdk8'
           label 'external'
         }
       }
@@ -107,8 +107,8 @@ pipeline {
 
     stage('JDK 8: domainmodel') {
       agent {
-        docker {
-          image 'maven:3.6.2-jdk-8'
+        dockerfile {
+          dir 'releng/jdk8'
           label 'external'
         }
       }
@@ -129,8 +129,8 @@ pipeline {
 
     stage('JDK 11: greetings-gradle') {
       agent {
-        docker {
-          image 'maven:3.6.2-jdk-11'
+        dockerfile {
+          dir 'releng/jdk11'
           label 'external'
         }
       }
@@ -150,8 +150,8 @@ pipeline {
 
     stage('JDK 11: greetings-maven') {
       agent {
-        docker {
-          image 'maven:3.6.2-jdk-11'
+        dockerfile {
+          dir 'releng/jdk11'
           label 'external'
         }
       }
@@ -174,8 +174,8 @@ pipeline {
 
     stage('JDK 11: greetings-tycho') {
       agent {
-        docker {
-          image 'maven:3.6.2-jdk-11'
+        dockerfile {
+          dir 'releng/jdk11'
           label 'external'
         }
       }
