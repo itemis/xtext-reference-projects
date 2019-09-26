@@ -12,7 +12,7 @@ pipeline {
     stage('JDK 8: Integrationtests') {
       agent {
         dockerfile {
-          dir 'releng/jdk8'
+          additionalBuildArgs  '--build-arg JDKVERSION=8'
           label 'external'
         }
       }
@@ -29,7 +29,7 @@ pipeline {
     stage('JDK 8: greetings-gradle') {
       agent {
         dockerfile {
-          dir 'releng/jdk8'
+          additionalBuildArgs  '--build-arg JDKVERSION=8'
           label 'external'
         }
       }
@@ -51,7 +51,7 @@ pipeline {
     stage('JDK 8: greetings-maven') {
       agent {
         dockerfile {
-          dir 'releng/jdk8'
+          additionalBuildArgs  '--build-arg JDKVERSION=8'
           label 'external'
         }
       }
@@ -76,7 +76,7 @@ pipeline {
     stage('JDK 8: greetings-tycho') {
       agent {
         dockerfile {
-          dir 'releng/jdk8'
+          additionalBuildArgs  '--build-arg JDKVERSION=8'
           label 'external'
         }
       }
@@ -108,7 +108,7 @@ pipeline {
     stage('JDK 8: domainmodel') {
       agent {
         dockerfile {
-          dir 'releng/jdk8'
+          additionalBuildArgs  '--build-arg JDKVERSION=8'
           label 'external'
         }
       }
@@ -130,7 +130,7 @@ pipeline {
     stage('JDK 11: greetings-gradle') {
       agent {
         dockerfile {
-          dir 'releng/jdk11'
+          additionalBuildArgs  '--build-arg JDKVERSION=11'
           label 'external'
         }
       }
@@ -151,7 +151,7 @@ pipeline {
     stage('JDK 11: greetings-maven') {
       agent {
         dockerfile {
-          dir 'releng/jdk11'
+          additionalBuildArgs  '--build-arg JDKVERSION=11'
           label 'external'
         }
       }
@@ -175,7 +175,7 @@ pipeline {
     stage('JDK 11: greetings-tycho') {
       agent {
         dockerfile {
-          dir 'releng/jdk11'
+          additionalBuildArgs  '--build-arg JDKVERSION=11'
           label 'external'
         }
       }
