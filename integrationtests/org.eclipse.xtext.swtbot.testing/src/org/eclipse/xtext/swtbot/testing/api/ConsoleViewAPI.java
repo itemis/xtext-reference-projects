@@ -30,17 +30,17 @@ public final class ConsoleViewAPI {
 
 	public void waitForMWE2ToFinish() {
 		System.out.println("Wait for MWE2 to finish ...");
-		waitForFinish("- Done.", "[ERROR]:", 1000 * 60, 1000 * 60 * 2);
+		waitForFinish("- Done.", "[ERROR]:", 1000 * 60 * 60, 1000 * 60 * 60);
 	}
 
 	public void waitForMavenToFinishWithSuccess() {
 		System.out.println("Wait for Maven to finish ...");
-		waitForFinish("BUILD SUCCESS", "[ERROR]", 1000 * 60 * 20, 1000 * 60 * 20);
+		waitForFinish("BUILD SUCCESS", "[ERROR]", 1000 * 60 * 60, 1000 * 60 * 60);
 	}
 
 	public void waitForGradleToFinishWithSuccess() {
 		System.out.println("Wait for Gradle to finish ...");
-		waitForFinish("BUILD SUCCESSFUL", "[ERROR]", 1000 * 60 * 20, 1000 * 60 * 20);
+		waitForFinish("BUILD SUCCESSFUL", "[ERROR]", 1000 * 60 * 60, 1000 * 60 * 60);
 	}
 
 	private void waitForFinish(String successText, String failText, long firstTimeout, long secondTimeout) {
