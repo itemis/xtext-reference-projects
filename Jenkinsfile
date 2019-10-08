@@ -21,7 +21,9 @@ pipeline {
       }
       steps {
         sh """
-          xvfb-run $WORKSPACE/scripts/integrationtests.sh
+          xvfb-run $WORKSPACE/scripts/integrationtests-wizard.sh
+          xvfb-run $WORKSPACE/scripts/integrationtests-xtend-examples.sh
+          xvfb-run $WORKSPACE/scripts/integrationtests-xtext-examples.sh
         """
       }
     }
