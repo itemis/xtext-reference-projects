@@ -36,3 +36,6 @@ generated
 xtext-gen
 xtend-gen
 plugin.xml_gen
+
+# maven repositories
+.m2
