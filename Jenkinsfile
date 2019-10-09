@@ -17,7 +17,7 @@ pipeline {
         }
       }
       environment {
-        MAVEN_OPTS="-Dmaven.repo.local=$WORKSPACE/.m2/repository"
+        MAVEN_OPTS="-Xmx3500M -Dmaven.repo.local=$WORKSPACE/.m2/repository"
       }
       steps {
         sh """
@@ -58,7 +58,7 @@ pipeline {
         }
       }
       environment {
-        MAVEN_OPTS="-Xmx2G -Dmaven.repo.local=$WORKSPACE/.m2/repository"
+        MAVEN_OPTS="-Xmx3500M -Dmaven.repo.local=$WORKSPACE/.m2/repository"
       }
       steps {
         sh """
@@ -83,7 +83,7 @@ pipeline {
         }
       }
       environment {
-        MAVEN_OPTS="-Dmaven.repo.local=$WORKSPACE/.m2/repository"
+        MAVEN_OPTS="-Xmx3500M -Dmaven.repo.local=$WORKSPACE/.m2/repository"
       }
       steps {
         sh """
@@ -115,7 +115,7 @@ pipeline {
         }
       }
       environment {
-        MAVEN_OPTS="-Dmaven.repo.local=$WORKSPACE/.m2/repository"
+        MAVEN_OPTS="-Xmx3500M -Dmaven.repo.local=$WORKSPACE/.m2/repository"
       }
       steps {
         sh """
@@ -158,7 +158,7 @@ pipeline {
         }
       }
       environment {
-        MAVEN_OPTS="-Dmaven.repo.local=$WORKSPACE/.m2/repository"
+        MAVEN_OPTS="-Xmx3500M -Dmaven.repo.local=$WORKSPACE/.m2/repository"
       }
       steps {
         sh """
@@ -182,7 +182,7 @@ pipeline {
         }
       }
       environment {
-        MAVEN_OPTS="-Dmaven.repo.local=$WORKSPACE/.m2/repository"
+        MAVEN_OPTS="-Xmx3500M -Dmaven.repo.local=$WORKSPACE/.m2/repository"
       }
       steps {
         sh """
