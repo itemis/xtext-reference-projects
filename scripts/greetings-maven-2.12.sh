@@ -1,4 +1,4 @@
-cd greetings-maven/2.12.0
+cd $WORKSPACE/greetings-maven/2.12.0
 
 export PROFILES=
 export SETTINGS=

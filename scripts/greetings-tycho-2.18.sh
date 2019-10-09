@@ -1,4 +1,4 @@
-cd greetings-tycho/2.18.0
+cd $WORKSPACE/greetings-tycho/2.18.0
 
 export PROFILES=-Pxtext_snapshots
 export SETTINGS="-s $WORKSPACE/settings.xml"

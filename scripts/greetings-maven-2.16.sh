@@ -1,4 +1,4 @@
-cd greetings-maven/2.16.0
+cd $WORKSPACE/greetings-maven/2.16.0
 
 export PROFILES=-Ptycho_snapshots,xtext_snapshots
 export SETTINGS="-s $WORKSPACE/settings.xml"
