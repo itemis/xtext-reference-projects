@@ -58,7 +58,7 @@ pipeline {
         }
       }
       environment {
-        MAVEN_OPTS="-Dmaven.repo.local=$WORKSPACE/.m2/repository"
+        MAVEN_OPTS="-Xmx2G -Dmaven.repo.local=$WORKSPACE/.m2/repository"
       }
       steps {
         sh """
