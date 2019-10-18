@@ -1,4 +1,4 @@
-cd domainmodel/2.19.0/org.eclipse.xtext.example.domainmodel.releng
+cd $WORKSPACE/domainmodel/2.19.0/org.eclipse.xtext.example.domainmodel.releng
 
 export PROFILES=-Pxtext_snapshots
 export SETTINGS="-s $WORKSPACE/settings.xml"
