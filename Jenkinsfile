@@ -13,7 +13,7 @@ pipeline {
         stage('JDK 8') {
           agent {
             kubernetes {
-              label 'xtext-ref-jdk-8-' + env.BRANCH_NAME + '-' + env.BUILD_NUMBER
+              label 'xtext-ref-jdk-8-' + env.BUILD_NUMBER
               defaultContainer 'xtext-maven-jdk-8'
               yaml '''
 apiVersion: v1
@@ -163,7 +163,7 @@ spec:
         stage('JDK 11') {
           agent {
             kubernetes {
-              label 'xtext-ref-jdk-11-' + env.BRANCH_NAME + '-' + env.BUILD_NUMBER
+              label 'xtext-ref-jdk-11-' + env.BUILD_NUMBER
               defaultContainer 'xtext-maven-jdk-11'
               yaml '''
 apiVersion: v1
