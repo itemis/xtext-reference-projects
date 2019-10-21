@@ -1,7 +1,7 @@
 ARG JDKVERSION
 FROM maven:3.6.0-jdk-${JDKVERSION}
 
-RUN useradd --create-home --shell /bin/bash xtext
+RUN useradd --create-home --uid 10001 --shell /bin/bash xtext
 ENV HOME=/home/xtext
 
 RUN apt update \
