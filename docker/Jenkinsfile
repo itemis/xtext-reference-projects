@@ -1,0 +1,35 @@
+pipeline {
+  agent {
+    label "external"
+  }
+
+  options {
+    buildDiscarder(logRotator(numToKeepStr:'25'))
+    disableConcurrentBuilds()
+    timeout(time: 15, unit: 'MINUTES')
+  }
+
+  stages {
+    stage('Docker for Java 8') {
+      steps {
+        dir("docker") {
+          sh """
+            docker build --build-arg JDKVERSION=8 -t xtext/maven:jdk8 .
+            docker push xtext/maven:jdk8
+          """
+        }
+      }
+    }
+
+    stage('Docker for Java 11') {
+      steps {
+        dir("docker") {
+          sh """
+            docker build --build-arg JDKVERSION=11 -t xtext/maven:jdk11 .
+            docker push xtext/maven:jdk11
+          """
+        }
+      }
+    }
+  }
+}
