@@ -34,7 +34,7 @@ spec:
     - mountPath: /home/jenkins/.ssh
       name: volume-known-hosts
   - name: xtext-maven-jdk-8
-    image: docker.io/smoht/xtext-buildenv:0.7
+    image: docker.io/xtext/maven:jdk8
     tty: true
     resources:
       limits:
@@ -184,7 +184,7 @@ spec:
     - mountPath: /home/jenkins/.ssh
       name: volume-known-hosts
   - name: xtext-maven-jdk-11
-    image: docker.io/smoht/xtext-buildenv:0.7
+    image: docker.io/xtext/maven:jdk11
     tty: true
     resources:
       limits:
