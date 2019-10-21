@@ -1,7 +1,7 @@
 ARG JDKVERSION
 FROM maven:3.6.0-jdk-${JDKVERSION}
 
-RUN useradd --create-home --uid 10002 --shell /bin/bash xtext
+RUN useradd --create-home --uid 10002 --shell /bin/bash default
 ENV HOME=/home/xtext
 
 RUN apt update \
@@ -12,4 +12,4 @@ RUN apt update \
     xauth \
     && rm -rf /var/lib/apt/lists/*
 
-USER xtext
+USER default
