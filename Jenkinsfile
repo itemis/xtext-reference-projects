@@ -45,7 +45,7 @@ spec:
   volumes:
   - name: tools
     persistentVolumeClaim:
-      claimName: tools-claim
+      claimName: tools-claim-jiro-xtext
   - name: volume-known-hosts
     configMap:
       name: known-hosts
