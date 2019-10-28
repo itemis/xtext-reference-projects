@@ -77,9 +77,9 @@ spec:
               }
               steps {
                 sh """
-                  #xvfb-run $WORKSPACE/scripts/integrationtests-wizard.sh
-                  xvfb-run $WORKSPACE/scripts/integrationtests-xtend-examples.sh
-                  xvfb-run $WORKSPACE/scripts/integrationtests-xtext-examples.sh
+                  #$WORKSPACE/scripts/integrationtests-wizard.sh
+                  $WORKSPACE/scripts/integrationtests-xtend-examples.sh
+                  $WORKSPACE/scripts/integrationtests-xtext-examples.sh
                 """
               }
             }
@@ -87,15 +87,15 @@ spec:
             stage('greetings-gradle') {
               steps {
                 sh """
-                  xvfb-run $WORKSPACE/scripts/greetings-gradle-2.12.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-gradle-2.14.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-gradle-2.15.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-gradle-2.16.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-gradle-2.17.M1.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-gradle-2.17.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-gradle-2.18.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-gradle-2.19.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-gradle-2.20.sh
+                  $WORKSPACE/scripts/greetings-gradle-2.12.sh
+                  $WORKSPACE/scripts/greetings-gradle-2.14.sh
+                  $WORKSPACE/scripts/greetings-gradle-2.15.sh
+                  $WORKSPACE/scripts/greetings-gradle-2.16.sh
+                  $WORKSPACE/scripts/greetings-gradle-2.17.M1.sh
+                  $WORKSPACE/scripts/greetings-gradle-2.17.sh
+                  $WORKSPACE/scripts/greetings-gradle-2.18.sh
+                  $WORKSPACE/scripts/greetings-gradle-2.19.sh
+                  $WORKSPACE/scripts/greetings-gradle-2.20.sh
                 """
               }
             }
@@ -106,15 +106,15 @@ spec:
               }
               steps {
                 sh """
-                  xvfb-run $WORKSPACE/scripts/greetings-maven-2.12.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-maven-2.13.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-maven-2.14.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-maven-2.15.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-maven-2.16.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-maven-2.17.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-maven-2.18.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-maven-2.19.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-maven-2.20.sh
+                  $WORKSPACE/scripts/greetings-maven-2.12.sh
+                  $WORKSPACE/scripts/greetings-maven-2.13.sh
+                  $WORKSPACE/scripts/greetings-maven-2.14.sh
+                  $WORKSPACE/scripts/greetings-maven-2.15.sh
+                  $WORKSPACE/scripts/greetings-maven-2.16.sh
+                  $WORKSPACE/scripts/greetings-maven-2.17.sh
+                  $WORKSPACE/scripts/greetings-maven-2.18.sh
+                  $WORKSPACE/scripts/greetings-maven-2.19.sh
+                  $WORKSPACE/scripts/greetings-maven-2.20.sh
                 """
               }
             }
@@ -125,22 +125,22 @@ spec:
               }
               steps {
                 sh """
-                  xvfb-run $WORKSPACE/scripts/greetings-tycho-2.14.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-tycho-2.15.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-tycho-2.16.sh
-                  TP=luna-linux xvfb-run $WORKSPACE/scripts/greetings-tycho-2.14.sh
-                  TP=mars-linux xvfb-run $WORKSPACE/scripts/greetings-tycho-2.14.sh
-                  TP=oxygen xvfb-run $WORKSPACE/scripts/greetings-tycho-2.14.sh
-                  TP=oxygen xvfb-run $WORKSPACE/scripts/greetings-tycho-2.15.sh
-                  TP=oxygen xvfb-run $WORKSPACE/scripts/greetings-tycho-2.16.sh
-                  TP=photon xvfb-run $WORKSPACE/scripts/greetings-tycho-2.14.sh
-                  TP=photon xvfb-run $WORKSPACE/scripts/greetings-tycho-2.15.sh
-                  TP=photon xvfb-run $WORKSPACE/scripts/greetings-tycho-2.16.sh
-                  TP=latest xvfb-run $WORKSPACE/scripts/greetings-tycho-2.16.sh
-                  TP=latest xvfb-run $WORKSPACE/scripts/greetings-tycho-2.17.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-tycho-2.18.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-tycho-2.19.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-tycho-2.20.sh
+                  $WORKSPACE/scripts/greetings-tycho-2.14.sh
+                  $WORKSPACE/scripts/greetings-tycho-2.15.sh
+                  $WORKSPACE/scripts/greetings-tycho-2.16.sh
+                  TP=luna-linux $WORKSPACE/scripts/greetings-tycho-2.14.sh
+                  TP=mars-linux $WORKSPACE/scripts/greetings-tycho-2.14.sh
+                  TP=oxygen $WORKSPACE/scripts/greetings-tycho-2.14.sh
+                  TP=oxygen $WORKSPACE/scripts/greetings-tycho-2.15.sh
+                  TP=oxygen $WORKSPACE/scripts/greetings-tycho-2.16.sh
+                  TP=photon $WORKSPACE/scripts/greetings-tycho-2.14.sh
+                  TP=photon $WORKSPACE/scripts/greetings-tycho-2.15.sh
+                  TP=photon $WORKSPACE/scripts/greetings-tycho-2.16.sh
+                  TP=latest $WORKSPACE/scripts/greetings-tycho-2.16.sh
+                  TP=latest $WORKSPACE/scripts/greetings-tycho-2.17.sh
+                  $WORKSPACE/scripts/greetings-tycho-2.18.sh
+                  $WORKSPACE/scripts/greetings-tycho-2.19.sh
+                  $WORKSPACE/scripts/greetings-tycho-2.20.sh
                 """
               }
             }
@@ -151,12 +151,12 @@ spec:
               }
               steps {
                 sh """
-                  xvfb-run $WORKSPACE/scripts/domainmodel-2.15.sh
-                  xvfb-run $WORKSPACE/scripts/domainmodel-2.16.sh
-                  xvfb-run $WORKSPACE/scripts/domainmodel-2.17.sh
-                  xvfb-run $WORKSPACE/scripts/domainmodel-2.18.sh
-                  xvfb-run $WORKSPACE/scripts/domainmodel-2.19.sh
-                  xvfb-run $WORKSPACE/scripts/domainmodel-2.20.sh
+                  $WORKSPACE/scripts/domainmodel-2.15.sh
+                  $WORKSPACE/scripts/domainmodel-2.16.sh
+                  $WORKSPACE/scripts/domainmodel-2.17.sh
+                  $WORKSPACE/scripts/domainmodel-2.18.sh
+                  $WORKSPACE/scripts/domainmodel-2.19.sh
+                  $WORKSPACE/scripts/domainmodel-2.20.sh
                 """
               }
             }
@@ -172,14 +172,14 @@ spec:
             stage('greetings-gradle') {
               steps {
                 sh """
-                  xvfb-run $WORKSPACE/scripts/greetings-gradle-2.16.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-gradle-2.17-J11.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-gradle-2.18.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-gradle-2.18-J11.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-gradle-2.19.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-gradle-2.19-J11.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-gradle-2.20.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-gradle-2.20-J11.sh
+                  $WORKSPACE/scripts/greetings-gradle-2.16.sh
+                  $WORKSPACE/scripts/greetings-gradle-2.17-J11.sh
+                  $WORKSPACE/scripts/greetings-gradle-2.18.sh
+                  $WORKSPACE/scripts/greetings-gradle-2.18-J11.sh
+                  $WORKSPACE/scripts/greetings-gradle-2.19.sh
+                  $WORKSPACE/scripts/greetings-gradle-2.19-J11.sh
+                  $WORKSPACE/scripts/greetings-gradle-2.20.sh
+                  $WORKSPACE/scripts/greetings-gradle-2.20-J11.sh
                 """
               }
             }
@@ -190,14 +190,14 @@ spec:
               }
               steps {
                 sh """
-                  xvfb-run $WORKSPACE/scripts/greetings-maven-2.16.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-maven-2.17-J11.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-maven-2.18.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-maven-2.18-J11.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-maven-2.19.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-maven-2.19-J11.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-maven-2.20.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-maven-2.20-J11.sh
+                  $WORKSPACE/scripts/greetings-maven-2.16.sh
+                  $WORKSPACE/scripts/greetings-maven-2.17-J11.sh
+                  $WORKSPACE/scripts/greetings-maven-2.18.sh
+                  $WORKSPACE/scripts/greetings-maven-2.18-J11.sh
+                  $WORKSPACE/scripts/greetings-maven-2.19.sh
+                  $WORKSPACE/scripts/greetings-maven-2.19-J11.sh
+                  $WORKSPACE/scripts/greetings-maven-2.20.sh
+                  $WORKSPACE/scripts/greetings-maven-2.20-J11.sh
                 """
               }
             }
@@ -208,14 +208,14 @@ spec:
               }
               steps {
                 sh """
-                  xvfb-run $WORKSPACE/scripts/greetings-tycho-2.16.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-tycho-2.17-J11.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-tycho-2.18.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-tycho-2.18-J11.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-tycho-2.19.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-tycho-2.19-J11.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-tycho-2.20.sh
-                  xvfb-run $WORKSPACE/scripts/greetings-tycho-2.20-J11.sh
+                  $WORKSPACE/scripts/greetings-tycho-2.16.sh
+                  $WORKSPACE/scripts/greetings-tycho-2.17-J11.sh
+                  $WORKSPACE/scripts/greetings-tycho-2.18.sh
+                  $WORKSPACE/scripts/greetings-tycho-2.18-J11.sh
+                  $WORKSPACE/scripts/greetings-tycho-2.19.sh
+                  $WORKSPACE/scripts/greetings-tycho-2.19-J11.sh
+                  $WORKSPACE/scripts/greetings-tycho-2.20.sh
+                  $WORKSPACE/scripts/greetings-tycho-2.20-J11.sh
                 """
               }
             }
