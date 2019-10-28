@@ -68,7 +68,7 @@ spec:
         stage('JDK 8') {
           tools {
             maven 'apache-maven-latest'
-            jdk 'openjdk-jdk8-latest'
+            jdk 'adoptopenjdk-hotspot-jdk8-latest'
           }
           stages{
             stage('Integrationtests') {
@@ -166,7 +166,7 @@ spec:
         stage('JDK 11') {
           tools {
             maven 'apache-maven-latest'
-            jdk 'openjdk-jdk11-latest'
+            jdk 'adoptopenjdk-hotspot-jdk11-latest'
           }
           stages {
             stage('greetings-gradle') {
