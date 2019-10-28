@@ -32,6 +32,8 @@ spec:
         memory: "3.6Gi"
         cpu: "1.0"
     volumeMounts:
+    - name: tools
+      mountPath: /opt/tools
     - name: settings-xml
       mountPath: /home/jenkins/.m2/settings.xml
       subPath: settings.xml
@@ -41,6 +43,9 @@ spec:
     - name: volume-known-hosts
       mountPath: /home/jenkins/.ssh
   volumes:
+  - name: tools
+    persistentVolumeClaim:
+      claimName: tools-claim
   - name: volume-known-hosts
     configMap:
       name: known-hosts
