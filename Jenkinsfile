@@ -1,21 +1,9 @@
 pipeline {
-  agent none
-
-  options {
-    buildDiscarder(logRotator(numToKeepStr:'15'))
-    disableConcurrentBuilds()
-    timeout(time: 360, unit: 'MINUTES')
-  }
-
-  stages {
-    stage('Xtext Reference Projects') {
-      parallel {
-        stage('JDK 8') {
-          agent {
-            kubernetes {
-              label 'xtext-ref-jdk-8-' + env.BUILD_NUMBER
-              defaultContainer 'xtext-maven-jdk-8'
-              yaml '''
+  agent {
+    kubernetes {
+      label 'xtext-ref-jdk-8-' + env.BUILD_NUMBER
+      defaultContainer 'xtext-maven-jdk-8'
+      yaml '''
 apiVersion: v1
 kind: Pod
 spec:
@@ -34,7 +22,7 @@ spec:
     - mountPath: /home/jenkins/.ssh
       name: volume-known-hosts
   - name: xtext-maven-jdk-8
-    image: docker.io/xtext/maven:jdk8
+    image: eclipsecbi/fedora-gtk3-mutter:30-gtk3.24
     tty: true
     resources:
       limits:
@@ -65,7 +53,22 @@ spec:
   - name: m2-repo
     emptyDir: {}
         '''
-            }
+    }
+  }
+
+  options {
+    buildDiscarder(logRotator(numToKeepStr:'15'))
+    disableConcurrentBuilds()
+    timeout(time: 360, unit: 'MINUTES')
+  }
+
+  stages {
+    stage('Xtext Reference Projects') {
+      parallel {
+        stage('JDK 8') {
+          tools {
+            maven 'apache-maven-latest'
+            jdk 'openjdk-jdk8-latest'
           }
           stages{
             stage('Integrationtests') {
@@ -161,61 +164,9 @@ spec:
         }
 
         stage('JDK 11') {
-          agent {
-            kubernetes {
-              label 'xtext-ref-jdk-11-' + env.BUILD_NUMBER
-              defaultContainer 'xtext-maven-jdk-11'
-              yaml '''
-apiVersion: v1
-kind: Pod
-spec:
-  containers:
-  - name: jnlp
-    image: 'eclipsecbi/jenkins-jnlp-agent'
-    args: ['\$(JENKINS_SECRET)', '\$(JENKINS_NAME)']
-    resources:
-      limits:
-        memory: "0.4Gi"
-        cpu: "0.2"
-      requests:
-        memory: "0.4Gi"
-        cpu: "0.2"
-    volumeMounts:
-    - mountPath: /home/jenkins/.ssh
-      name: volume-known-hosts
-  - name: xtext-maven-jdk-11
-    image: docker.io/xtext/maven:jdk11
-    tty: true
-    resources:
-      limits:
-        memory: "3.6Gi"
-        cpu: "1.0"
-      requests:
-        memory: "3.6Gi"
-        cpu: "1.0"
-    volumeMounts:
-    - name: settings-xml
-      mountPath: /home/jenkins/.m2/settings.xml
-      subPath: settings.xml
-      readOnly: true
-    - name: m2-repo
-      mountPath: /home/jenkins/.m2/repository
-    - name: volume-known-hosts
-      mountPath: /home/jenkins/.ssh
-  volumes:
-  - name: volume-known-hosts
-    configMap:
-      name: known-hosts
-  - name: settings-xml
-    secret:
-      secretName: m2-secret-dir
-      items:
-      - key: settings.xml
-        path: settings.xml
-  - name: m2-repo
-    emptyDir: {}
-        '''
-            }
+          tools {
+            maven 'apache-maven-latest'
+            jdk 'openjdk-jdk11-latest'
           }
           stages {
             stage('greetings-gradle') {
