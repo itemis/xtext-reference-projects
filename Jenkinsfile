@@ -1,7 +1,7 @@
 pipeline {
   agent {
     kubernetes {
-      label 'xtext-ref-jdk-8-' + env.BUILD_NUMBER
+      label 'xtext-ref-' + env.BUILD_NUMBER
       defaultContainer 'xtext-maven-jdk-8'
       yaml '''
 apiVersion: v1
