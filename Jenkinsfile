@@ -2,7 +2,7 @@ pipeline {
   agent {
     kubernetes {
       label 'xtext-ref-' + env.BUILD_NUMBER
-      defaultContainer 'xtext-maven-jdk-8'
+      defaultContainer 'xtext-ref-env'
       yaml '''
 apiVersion: v1
 kind: Pod
@@ -21,7 +21,7 @@ spec:
     volumeMounts:
     - mountPath: /home/jenkins/.ssh
       name: volume-known-hosts
-  - name: xtext-maven-jdk-8
+  - name: xtext-ref-env
     image: eclipsecbi/fedora-gtk3-mutter:30-gtk3.24
     tty: true
     resources:
@@ -32,8 +32,6 @@ spec:
         memory: "3.6Gi"
         cpu: "1.0"
     volumeMounts:
-    - name: tools
-      mountPath: /opt/tools
     - name: settings-xml
       mountPath: /home/jenkins/.m2/settings.xml
       subPath: settings.xml
@@ -43,9 +41,6 @@ spec:
     - name: volume-known-hosts
       mountPath: /home/jenkins/.ssh
   volumes:
-  - name: tools
-    persistentVolumeClaim:
-      claimName: tools-claim-jiro-xtext
   - name: volume-known-hosts
     configMap:
       name: known-hosts
@@ -57,7 +52,7 @@ spec:
         path: settings.xml
   - name: m2-repo
     emptyDir: {}
-        '''
+    '''
     }
   }
 
