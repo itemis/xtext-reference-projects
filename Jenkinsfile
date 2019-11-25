@@ -22,7 +22,7 @@ spec:
     - mountPath: /home/jenkins/.ssh
       name: volume-known-hosts
   - name: xtext-ref-env
-    image: eclipsecbi/fedora-gtk3-mutter:31-gtk3.24
+    image: docker.io/smoht/xtext-buildenv:0.7
     tty: true
     resources:
       limits:
