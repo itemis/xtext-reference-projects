@@ -24,8 +24,8 @@ spec:
   - name: xtext-ref-env
     image: eclipsecbi/fedora-gtk3-mutter:31-gtk3.24
     tty: true
-    command:
-    - /home/vnc/.vnc/xstartup.sh && cat
+    command: ["/bin/bash"]
+    args: ["/home/vnc/.vnc/xstartup.sh && cat"]
     resources:
       limits:
         memory: "3.6Gi"
