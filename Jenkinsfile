@@ -25,7 +25,7 @@ spec:
     image: eclipsecbi/fedora-gtk3-mutter:31-gtk3.24
     tty: true
     command: ["/bin/bash"]
-    args: ["/home/vnc/.vnc/xstartup.sh && cat"] // TODO: FIX THIS
+    args: ["/home/vnc/.vnc/xstartup.sh && cat"] # TODO: FIX THIS
     resources:
       limits:
         memory: "3.6Gi"
@@ -103,6 +103,10 @@ spec:
                   $WORKSPACE/scripts/greetings-gradle-2.18.sh
                   $WORKSPACE/scripts/greetings-gradle-2.19.sh
                   $WORKSPACE/scripts/greetings-gradle-2.20.sh
+                  $WORKSPACE/scripts/greetings-gradle-2.20.sh
+                  $WORKSPACE/scripts/greetings-gradle-2.21.sh
+                  $WORKSPACE/scripts/greetings-gradle-2.22.sh
+                  $WORKSPACE/scripts/greetings-gradle-2.23.sh
                 """
               }
             }
@@ -122,6 +126,9 @@ spec:
                   $WORKSPACE/scripts/greetings-maven-2.18.sh
                   $WORKSPACE/scripts/greetings-maven-2.19.sh
                   $WORKSPACE/scripts/greetings-maven-2.20.sh
+                  $WORKSPACE/scripts/greetings-maven-2.21.sh
+                  $WORKSPACE/scripts/greetings-maven-2.22.sh
+                  $WORKSPACE/scripts/greetings-maven-2.23.sh
                 """
               }
             }
@@ -148,6 +155,9 @@ spec:
                   $WORKSPACE/scripts/greetings-tycho-2.18.sh
                   $WORKSPACE/scripts/greetings-tycho-2.19.sh
                   $WORKSPACE/scripts/greetings-tycho-2.20.sh
+                  $WORKSPACE/scripts/greetings-tycho-2.21.sh
+                  $WORKSPACE/scripts/greetings-tycho-2.22.sh
+                  $WORKSPACE/scripts/greetings-tycho-2.23.sh
                 """
               }
             }
@@ -187,6 +197,14 @@ spec:
                   $WORKSPACE/scripts/greetings-gradle-2.19-J11.sh
                   $WORKSPACE/scripts/greetings-gradle-2.20.sh
                   $WORKSPACE/scripts/greetings-gradle-2.20-J11.sh
+                  $WORKSPACE/scripts/greetings-gradle-2.21.sh
+                  $WORKSPACE/scripts/greetings-gradle-2.21-J11.sh
+                  $WORKSPACE/scripts/greetings-gradle-2.22.sh
+                  $WORKSPACE/scripts/greetings-gradle-2.22-J11.sh
+                  $WORKSPACE/scripts/greetings-gradle-2.23.sh
+                  $WORKSPACE/scripts/greetings-gradle-2.23-J11.sh
+                  $WORKSPACE/scripts/greetings-gradle-2.24.sh
+                  $WORKSPACE/scripts/greetings-gradle-2.24-J11.sh
                 """
               }
             }
@@ -205,6 +223,14 @@ spec:
                   $WORKSPACE/scripts/greetings-maven-2.19-J11.sh
                   $WORKSPACE/scripts/greetings-maven-2.20.sh
                   $WORKSPACE/scripts/greetings-maven-2.20-J11.sh
+                  $WORKSPACE/scripts/greetings-maven-2.21.sh
+                  $WORKSPACE/scripts/greetings-maven-2.21-J11.sh
+                  $WORKSPACE/scripts/greetings-maven-2.22.sh
+                  $WORKSPACE/scripts/greetings-maven-2.22-J11.sh
+                  $WORKSPACE/scripts/greetings-maven-2.23.sh
+                  $WORKSPACE/scripts/greetings-maven-2.23-J11.sh
+                  $WORKSPACE/scripts/greetings-maven-2.24.sh
+                  $WORKSPACE/scripts/greetings-maven-2.24-J11.sh
                 """
               }
             }
@@ -223,6 +249,25 @@ spec:
                   $WORKSPACE/scripts/greetings-tycho-2.19-J11.sh
                   $WORKSPACE/scripts/greetings-tycho-2.20.sh
                   $WORKSPACE/scripts/greetings-tycho-2.20-J11.sh
+                  $WORKSPACE/scripts/greetings-tycho-2.21.sh
+                  $WORKSPACE/scripts/greetings-tycho-2.21-J11.sh
+                  $WORKSPACE/scripts/greetings-tycho-2.22.sh
+                  $WORKSPACE/scripts/greetings-tycho-2.22-J11.sh
+                  $WORKSPACE/scripts/greetings-tycho-2.23.sh
+                  $WORKSPACE/scripts/greetings-tycho-2.23-J11.sh
+                  $WORKSPACE/scripts/greetings-tycho-2.24.sh
+                  $WORKSPACE/scripts/greetings-tycho-2.24-J11.sh
+                """
+              }
+            }
+
+            stage('domainmodel') {
+              environment {
+                MAVEN_OPTS="-Xmx3500M -Dmaven.repo.local=$WORKSPACE/.m2/repository"
+              }
+              steps {
+                sh """
+                  $WORKSPACE/scripts/domainmodel-2.24.sh
                 """
               }
             }
