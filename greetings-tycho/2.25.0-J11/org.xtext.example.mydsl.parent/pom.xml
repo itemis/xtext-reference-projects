@@ -13,7 +13,7 @@
 		<maven.compiler.source>11</maven.compiler.source>
 		<maven.compiler.target>11</maven.compiler.target>
 		<!-- Tycho settings -->
-		<tycho-version>1.7.0</tycho-version>
+		<tycho-version>2.4.0-SNAPSHOT</tycho-version>
 		<!-- Define overridable properties for tycho-surefire-plugin -->
 		<platformSystemProperties></platformSystemProperties>
 		<moduleProperties></moduleProperties>
@@ -305,6 +305,10 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</pluginRepository>
+		<pluginRepository>
+      		<id>tycho-snapshots</id>
+      		<url>https://repo.eclipse.org/content/repositories/tycho-snapshots/</url>
+    	</pluginRepository>
 	</pluginRepositories>
 	<profiles>
 		<profile>
