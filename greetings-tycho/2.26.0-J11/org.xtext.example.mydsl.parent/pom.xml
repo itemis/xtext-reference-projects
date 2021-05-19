@@ -292,11 +292,40 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
+<repository>
+			<id>xt1</id>
+			<name>xt1</name>
+			<url>https://ci.eclipse.org/xtext/job/xtext-umbrella/job/cd_guice501/lastSuccessfulBuild/artifact/build/p2-repository/</url>
+		</repository>
 		<repository>
-			<id>sonatype-snapshots</id>
-			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-			<releases><enabled>false</enabled></releases>
-			<snapshots><enabled>true</enabled></snapshots>
+			<id>xt2</id>
+			<name>xt2</name>
+			<url>https://ci.eclipse.org/xtext/job/xtext-lib/job/cd_guice501/lastSuccessfulBuild/artifact/build/maven-repository/</url>
+		</repository>
+		<repository>
+			<id>xt3</id>
+			<name>xt3</name>
+			<url>https://ci.eclipse.org/xtext/job/xtext-core/job/cd_guice501/lastSuccessfulBuild/artifact/build/maven-repository/</url>
+		</repository>
+		<repository>
+			<id>xt4</id>
+			<name>xt4</name>
+			<url>https://ci.eclipse.org/xtext/job/xtext-extras/job/cd_guice501/lastSuccessfulBuild/artifact/build/maven-repository/</url>
+		</repository>
+		<repository>
+			<id>xt5</id>
+			<name>xt5</name>
+			<url>https://ci.eclipse.org/xtext/job/xtext-maven/job/cd_guice501/lastSuccessfulBuild/artifact/build/maven-repository/</url>
+		</repository>
+		<repository>
+			<id>xt6</id>
+			<name>xt6</name>
+			<url>https://ci.eclipse.org/xtext/job/xtext-xtend/job/cd_guice501/lastSuccessfulBuild/artifact/build/maven-repository/</url>
+		</repository>
+		<repository>
+			<id>xt7</id>
+			<name>xt7</name>
+			<url>https://ci.eclipse.org/xtext/job/xtext-web/job/cd_guice501/lastSuccessfulBuild/artifact/build/maven-repository/</url>
 		</repository>
 	</repositories>
 	<pluginRepositories>
@@ -311,11 +340,40 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</pluginRepository>
+<pluginRepository>
+			<id>xt1</id>
+			<name>xt1</name>
+			<url>https://ci.eclipse.org/xtext/job/xtext-umbrella/job/cd_guice501/lastSuccessfulBuild/artifact/build/p2-repository/</url>
+		</pluginRepository>
 		<pluginRepository>
-			<id>sonatype-snapshots</id>
-			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-			<releases><enabled>false</enabled></releases>
-			<snapshots><enabled>true</enabled></snapshots>
+			<id>xt2</id>
+			<name>xt2</name>
+			<url>https://ci.eclipse.org/xtext/job/xtext-lib/job/cd_guice501/lastSuccessfulBuild/artifact/build/maven-repository/</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>xt3</id>
+			<name>xt3</name>
+			<url>https://ci.eclipse.org/xtext/job/xtext-core/job/cd_guice501/lastSuccessfulBuild/artifact/build/maven-repository/</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>xt4</id>
+			<name>xt4</name>
+			<url>https://ci.eclipse.org/xtext/job/xtext-extras/job/cd_guice501/lastSuccessfulBuild/artifact/build/maven-repository/</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>xt5</id>
+			<name>xt5</name>
+			<url>https://ci.eclipse.org/xtext/job/xtext-maven/job/cd_guice501/lastSuccessfulBuild/artifact/build/maven-repository/</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>xt6</id>
+			<name>xt6</name>
+			<url>https://ci.eclipse.org/xtext/job/xtext-xtend/job/cd_guice501/lastSuccessfulBuild/artifact/build/maven-repository/</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>xt7</id>
+			<name>xt7</name>
+			<url>https://ci.eclipse.org/xtext/job/xtext-web/job/cd_guice501/lastSuccessfulBuild/artifact/build/maven-repository/</url>
 		</pluginRepository>
 	</pluginRepositories>
 	<profiles>
