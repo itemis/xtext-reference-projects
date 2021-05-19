@@ -330,7 +330,7 @@
 		<repository>
 			<id>mwe</id>
 			<name>mwe</name>
-			<url>https://ci.eclipse.org/mwe/job/mwe2/job/cd_mweGuice5Experiment/lastSuccessfulBuild/git-repo/my-local-snapshots-dir/</url>
+			<url>https://ci.eclipse.org/mwe/job/mwe2/job/cd_mweGuice5Experiment/lastSuccessfulBuild/artifact/git-repo/my-local-snapshots-dir/</url>
 		</repository>
 	</repositories>
 	<pluginRepositories>
@@ -383,7 +383,7 @@
 		<pluginRepository>
 			<id>mwex</id>
 			<name>mwex</name>
-			<url>https://ci.eclipse.org/mwe/job/mwe2/job/cd_mweGuice5Experiment/lastSuccessfulBuild/git-repo/my-local-snapshots-dir//</url>
+			<url>https://ci.eclipse.org/mwe/job/mwe2/job/cd_mweGuice5Experiment/lastSuccessfulBuild/artifact/git-repo/my-local-snapshots-dir/</url>
 		</pluginRepository>
 	</pluginRepositories>
 	<profiles>
