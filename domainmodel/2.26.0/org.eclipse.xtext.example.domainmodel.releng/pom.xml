@@ -24,7 +24,7 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<!-- Tycho settings -->
-		<tycho-version>2.3.0</tycho-version>
+		<tycho-version>2.4.0</tycho-version>
 		<targetplatform.groupId>${project.groupId}</targetplatform.groupId>
 		<targetplatform.artifactId>${project.groupId}.tp</targetplatform.artifactId>
 		<targetplatform.version>${project.version}</targetplatform.version>
@@ -318,6 +318,10 @@
 		</repository>
 	</repositories>
 	<pluginRepositories>
+		    <pluginRepository>
+      <id>tycho-staged</id>
+      <url>https://oss.sonatype.org/content/repositories/orgeclipsetycho-1067</url>
+    </pluginRepository>
 		<pluginRepository>
 			<id>codehaus-snapshots</id>
 			<name>disable dead 'Codehaus Snapshots' repository, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=481478</name>

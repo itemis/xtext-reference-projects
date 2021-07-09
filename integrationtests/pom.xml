@@ -16,7 +16,7 @@
 		<surefire-jvmargs></surefire-jvmargs>
 		<xtend-maven-plugin-version>2.19.0</xtend-maven-plugin-version>
 		<JENKINS_URL>https://ci.eclipse.org/xtext/</JENKINS_URL>
-		<tycho-version>2.3.0</tycho-version>
+		<tycho-version>2.4.0</tycho-version>
 
 		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>ISO-8859-1</project.reporting.outputEncoding>
@@ -31,6 +31,13 @@
 		<module>org.eclipse.xtext.swtbot.testing</module>
 		<module>org.eclipse.xtext.swtbot.tests</module>
 	</modules>
+
+	 <pluginRepositories>
+    <pluginRepository>
+      <id>tycho-staged</id>
+      <url>https://oss.sonatype.org/content/repositories/orgeclipsetycho-1067</url>
+    </pluginRepository>
+  </pluginRepositories>
 
 	<build>
 		<plugins>
